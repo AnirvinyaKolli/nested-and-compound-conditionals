@@ -7,7 +7,7 @@ Nested and compund conditionals lab
 #include <iostream>
 #include <string>
 using namespace std; 
-
+// Method for smart therm 
 string smartThermometer(bool isHome, int temp){
     if(!isHome){
         return "System idle; No one is home.";
@@ -23,21 +23,29 @@ string smartThermometer(bool isHome, int temp){
     return ""; 
 }
 
+// Method for password validation 
 string passwordValidator(string username, string password){
     return (username == "admin" && password == "1234") ? "Access granted." : "Access denied."; 
-} 
+}
 
+//Method for arcade free pass
 string arcadeFreePassValidator(bool isTuesday, int age){
     return (isTuesday || age <= 12 ) ? "Free pass!" : "Sorry you have to pay.";
 }
 
+
 int main(){
+
+    //Get input 
     int temp;
     cout << "Smart thermometer!: Enter temprature" << "\n"; 
     cin >>  temp; 
     bool isHome = true; 
+    
+    //output 
     cout << smartThermometer(isHome, temp)  << "\n"; 
 
+    //Get input 
     string username;
     string password; 
     cin.ignore();  
@@ -45,11 +53,16 @@ int main(){
     getline(cin, username);
     cout << "Enter password: "  << "\n"; 
     getline(cin, password);
+
+    //output 
     cout <<  passwordValidator(username, password)  << "\n"; 
 
+    //Get input 
     int age; 
     cout << "Enter age to see if you are elligble for free entry: "  << "\n";
     cin >> age; 
     bool isTuesday = false; 
+
+    //output 
     cout << arcadeFreePassValidator(isTuesday, age)  << "\n"; 
 }
